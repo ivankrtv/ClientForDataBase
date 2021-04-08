@@ -1,0 +1,10 @@
+C:\Users\Ваня\source\repos\AppDB\AppDB\bin\Debug\AppDB.exe.config
+C:\Users\Ваня\source\repos\AppDB\AppDB\bin\Debug\AppDB.exe
+C:\Users\Ваня\source\repos\AppDB\AppDB\bin\Debug\AppDB.pdb
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.csprojAssemblyReference.cache
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.ClientDB.resources
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.Properties.Resources.resources
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.csproj.GenerateResource.cache
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.csproj.CoreCompileInputs.cache
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.exe
+C:\Users\Ваня\source\repos\AppDB\AppDB\obj\Debug\AppDB.pdb
