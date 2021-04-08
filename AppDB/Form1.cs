@@ -62,5 +62,18 @@ namespace AppDB
             }
         }
 
+        private void Search_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter search = new SqlDataAdapter(
+                $"SELECT Orders.Num, Orders.orders_date, Orders.Contract_ID, Orders.Providerr, Orders.Storage," +
+                $"Supply.Product_ID, Supply.NumOfProducts, Supply.Cost FROM Orders, Supply " +
+                $"WHERE Orders.Contract_ID = {Convert.ToInt32(SearchField.Text)} AND Orders.Contract_ID = Supply.Contract_ID", sqlconnection);
+
+            //search.Parameters.AddWithValue("Contract", Convert.ToInt32(SearchField.Text));
+
+            DataSet data = new DataSet();
+            search.Fill(data);
+            dataGridView1.DataSource = data.Tables[0];
+        }
     }
 }

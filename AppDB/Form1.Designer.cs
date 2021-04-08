@@ -49,10 +49,16 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SearchField = new System.Windows.Forms.TextBox();
+            this.Search = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOfProducts)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -233,6 +239,10 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.Search);
+            this.tabPage2.Controls.Add(this.SearchField);
+            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -267,6 +277,42 @@
             this.tabPage5.Text = "Поставки";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(203, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Введите номер договора";
+            // 
+            // SearchField
+            // 
+            this.SearchField.Location = new System.Drawing.Point(239, 10);
+            this.SearchField.Name = "SearchField";
+            this.SearchField.Size = new System.Drawing.Size(174, 26);
+            this.SearchField.TabIndex = 1;
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(444, 7);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 33);
+            this.Search.TabIndex = 2;
+            this.Search.Text = "Найти";
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 46);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1184, 549);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // ClientDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -281,6 +327,9 @@
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOfProducts)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +357,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Search;
+        private System.Windows.Forms.TextBox SearchField;
+        private System.Windows.Forms.Label label8;
     }
 }
 
