@@ -26,8 +26,8 @@ namespace AppDB
             sqlconnection.Open();
         }
 
-        private void Insert_new_Click(object sender, EventArgs e)
-        {
+        private void Insert_new_Click(object sender, EventArgs e)   // обработка добавления заказа в таблицы
+        {                                                           // Orders и Supply
             int check;
             SqlCommand NewOrder = new SqlCommand(
                 $"INSERT INTO Orders VALUES(@Num, @Date, @Contract_ID, @Provider, @Storage)", sqlconnection);
@@ -60,9 +60,9 @@ namespace AppDB
                 SqlCommand delSepply = new SqlCommand($"DELETE FROM Supply WHERE Contract_ID = {Convert.ToInt32(ContractID.Text)}", sqlconnection);
                 SqlCommand delOrders = new SqlCommand($"DELETE FROM Orders WHERE Contract_ID = {Convert.ToInt32(ContractID.Text)}", sqlconnection);
             }
-        }
+        }  
 
-        private void Search_Click(object sender, EventArgs e)
+        private void Search_Click(object sender, EventArgs e)   // обработка поиска заказа по номеру договора
         {
             SqlDataAdapter search = new SqlDataAdapter(
                 $"SELECT Orders.Num, Orders.orders_date, Orders.Contract_ID, Orders.Providerr, Orders.Storage," +
@@ -74,6 +74,56 @@ namespace AppDB
             DataSet data = new DataSet();
             search.Fill(data);
             dataGridView1.DataSource = data.Tables[0];
+        }
+
+        private void DeleteOrder_Click(object sender, EventArgs e)  //удаление заказа по номеру договора
+        {
+            SqlCommand delSupply = new SqlCommand($"DELETE FROM Supply WHERE " +
+                $"Contract_ID = {Convert.ToInt32(SearchField.Text)}", sqlconnection);
+            SqlCommand delOrder = new SqlCommand($"DELETE FROM Orders WHERE " +
+                $"Contract_ID = {Convert.ToInt32(SearchField.Text)}", sqlconnection);
+
+            int check = delSupply.ExecuteNonQuery();
+            check += delOrder.ExecuteNonQuery();
+            if (check == 2) MessageBox.Show("Удалено");
+            else MessageBox.Show("Ошибка при удалении");
+        }
+
+        private void RefPruductsTable_Click(object sender, EventArgs e)     //обновление таблицы Products
+        {
+            SqlDataAdapter refresh = new SqlDataAdapter("SELECT * FROM Products", sqlconnection);
+
+            DataSet dataset = new DataSet();
+            refresh.Fill(dataset);
+            ProductsTable.DataSource = dataset.Tables[0];
+        }
+
+        private void Add_Click(object sender, EventArgs e)  // Добавление товара в табл. Products
+        {
+            SqlCommand add = new SqlCommand($"INSERT INTO Products VALUES(@ProductsID, " +
+                $"@Units, @ProductsName, @Price)", sqlconnection);
+
+            bool ifConvert = float.TryParse(Price.Text, out float floatPrice);
+            add.Parameters.AddWithValue("ProductsID", Convert.ToInt32(Product_ID.Text));
+            add.Parameters.AddWithValue("Units", Units.Text);
+            add.Parameters.AddWithValue("ProductsName", ProductName.Text);
+            if(ifConvert) add.Parameters.AddWithValue("Price", floatPrice);
+
+            int check = add.ExecuteNonQuery();
+            if (check == 1) MessageBox.Show("Успешно добавлено");
+            else MessageBox.Show("Строка НЕ была добавлена");
+        }
+
+        private void Delete_Click(object sender, EventArgs e)   // удаление из Products по номеру договора
+        {
+            SqlCommand delProduct = new SqlCommand($"DELETE FROM Products WHERE" +
+                $" Product_ID = @ProductID", sqlconnection);
+
+            delProduct.Parameters.AddWithValue("ProductID", Convert.ToInt32(ProdIDForDel.Text));
+
+            int check = delProduct.ExecuteNonQuery();
+            if (check == 1) MessageBox.Show("Успешно удалено");
+            else MessageBox.Show("Произошла ошибка. Данные не были удалены");
         }
     }
 }

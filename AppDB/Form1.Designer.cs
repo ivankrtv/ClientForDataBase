@@ -46,19 +46,41 @@
             this.Provider = new System.Windows.Forms.TextBox();
             this.ContractID = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Search = new System.Windows.Forms.Button();
+            this.SearchField = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
-            this.SearchField = new System.Windows.Forms.TextBox();
-            this.Search = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ProductsTable = new System.Windows.Forms.DataGridView();
+            this.DeleteOrder = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.RefPruductsTable = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Product_ID = new System.Windows.Forms.TextBox();
+            this.Units = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ProductName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Price = new System.Windows.Forms.TextBox();
+            this.Label = new System.Windows.Forms.Label();
+            this.Add = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ProdIDForDel = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOfProducts)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsTable)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -239,6 +261,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.DeleteOrder);
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.Search);
             this.tabPage2.Controls.Add(this.SearchField);
@@ -250,14 +274,68 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Найти";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 46);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(1184, 549);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // Search
+            // 
+            this.Search.Location = new System.Drawing.Point(353, 7);
+            this.Search.Name = "Search";
+            this.Search.Size = new System.Drawing.Size(75, 33);
+            this.Search.TabIndex = 2;
+            this.Search.Text = "Найти";
+            this.Search.UseVisualStyleBackColor = true;
+            this.Search.Click += new System.EventHandler(this.Search_Click);
+            // 
+            // SearchField
+            // 
+            this.SearchField.Location = new System.Drawing.Point(161, 10);
+            this.SearchField.Name = "SearchField";
+            this.SearchField.Size = new System.Drawing.Size(174, 26);
+            this.SearchField.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(20, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(135, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Номер договора";
+            // 
             // tabPage4
             // 
+            this.tabPage4.BackColor = System.Drawing.Color.Silver;
+            this.tabPage4.Controls.Add(this.label17);
+            this.tabPage4.Controls.Add(this.label16);
+            this.tabPage4.Controls.Add(this.Delete);
+            this.tabPage4.Controls.Add(this.ProdIDForDel);
+            this.tabPage4.Controls.Add(this.label15);
+            this.tabPage4.Controls.Add(this.label14);
+            this.tabPage4.Controls.Add(this.Add);
+            this.tabPage4.Controls.Add(this.Price);
+            this.tabPage4.Controls.Add(this.Label);
+            this.tabPage4.Controls.Add(this.ProductName);
+            this.tabPage4.Controls.Add(this.label13);
+            this.tabPage4.Controls.Add(this.Units);
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.Product_ID);
+            this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Controls.Add(this.label10);
+            this.tabPage4.Controls.Add(this.RefPruductsTable);
+            this.tabPage4.Controls.Add(this.ProductsTable);
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(1200, 603);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Товары";
-            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -277,41 +355,180 @@
             this.tabPage5.Text = "Поставки";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // ProductsTable
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 13);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(203, 20);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Введите номер договора";
+            this.ProductsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsTable.Location = new System.Drawing.Point(8, 3);
+            this.ProductsTable.Name = "ProductsTable";
+            this.ProductsTable.RowHeadersWidth = 62;
+            this.ProductsTable.RowTemplate.Height = 28;
+            this.ProductsTable.Size = new System.Drawing.Size(1184, 378);
+            this.ProductsTable.TabIndex = 0;
             // 
-            // SearchField
+            // DeleteOrder
             // 
-            this.SearchField.Location = new System.Drawing.Point(239, 10);
-            this.SearchField.Name = "SearchField";
-            this.SearchField.Size = new System.Drawing.Size(174, 26);
-            this.SearchField.TabIndex = 1;
+            this.DeleteOrder.Location = new System.Drawing.Point(1049, 10);
+            this.DeleteOrder.Name = "DeleteOrder";
+            this.DeleteOrder.Size = new System.Drawing.Size(103, 29);
+            this.DeleteOrder.TabIndex = 4;
+            this.DeleteOrder.Text = "Удалить";
+            this.DeleteOrder.UseVisualStyleBackColor = true;
+            this.DeleteOrder.Click += new System.EventHandler(this.DeleteOrder_Click);
             // 
-            // Search
+            // label9
             // 
-            this.Search.Location = new System.Drawing.Point(444, 7);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(75, 33);
-            this.Search.TabIndex = 2;
-            this.Search.Text = "Найти";
-            this.Search.UseVisualStyleBackColor = true;
-            this.Search.Click += new System.EventHandler(this.Search_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(720, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(323, 20);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Удалить заказ с этим номером договора";
             // 
-            // dataGridView1
+            // RefPruductsTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1184, 549);
-            this.dataGridView1.TabIndex = 3;
+            this.RefPruductsTable.Location = new System.Drawing.Point(1079, 387);
+            this.RefPruductsTable.Name = "RefPruductsTable";
+            this.RefPruductsTable.Size = new System.Drawing.Size(113, 35);
+            this.RefPruductsTable.TabIndex = 1;
+            this.RefPruductsTable.Text = "Обновить";
+            this.RefPruductsTable.UseVisualStyleBackColor = true;
+            this.RefPruductsTable.Click += new System.EventHandler(this.RefPruductsTable_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(235, 387);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Добавить товар:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 420);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(117, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Номер товара";
+            // 
+            // Product_ID
+            // 
+            this.Product_ID.Location = new System.Drawing.Point(8, 444);
+            this.Product_ID.Name = "Product_ID";
+            this.Product_ID.Size = new System.Drawing.Size(129, 26);
+            this.Product_ID.TabIndex = 4;
+            // 
+            // Units
+            // 
+            this.Units.Location = new System.Drawing.Point(163, 444);
+            this.Units.Name = "Units";
+            this.Units.Size = new System.Drawing.Size(129, 26);
+            this.Units.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(159, 420);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Единицы товара";
+            // 
+            // ProductName
+            // 
+            this.ProductName.Location = new System.Drawing.Point(317, 444);
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Size = new System.Drawing.Size(176, 26);
+            this.ProductName.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(313, 420);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(180, 20);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Наименование товара";
+            // 
+            // Price
+            // 
+            this.Price.Location = new System.Drawing.Point(518, 444);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(129, 26);
+            this.Price.TabIndex = 10;
+            // 
+            // Label
+            // 
+            this.Label.AutoSize = true;
+            this.Label.Location = new System.Drawing.Point(514, 420);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(136, 20);
+            this.Label.TabIndex = 9;
+            this.Label.Text = "Цена за единицу";
+            // 
+            // Add
+            // 
+            this.Add.Location = new System.Drawing.Point(694, 440);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(111, 34);
+            this.Add.TabIndex = 11;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(235, 495);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 20);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Удалить товар:";
+            // 
+            // ProdIDForDel
+            // 
+            this.ProdIDForDel.Location = new System.Drawing.Point(12, 540);
+            this.ProdIDForDel.Name = "ProdIDForDel";
+            this.ProdIDForDel.Size = new System.Drawing.Size(129, 26);
+            this.ProdIDForDel.TabIndex = 14;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 516);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(117, 20);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Номер товара";
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(177, 536);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(115, 34);
+            this.Delete.TabIndex = 15;
+            this.Delete.Text = "Удалить";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(492, 473);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(220, 20);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "(целая и десятичная часть ";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(514, 493);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(163, 20);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "разделять запятой)";
             // 
             // ClientDB
             // 
@@ -330,6 +547,9 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductsTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,6 +581,26 @@
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.TextBox SearchField;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView ProductsTable;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button DeleteOrder;
+        private System.Windows.Forms.Button RefPruductsTable;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox Units;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox Product_ID;
+        private System.Windows.Forms.TextBox ProductName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox Price;
+        private System.Windows.Forms.Label Label;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.TextBox ProdIDForDel;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 
