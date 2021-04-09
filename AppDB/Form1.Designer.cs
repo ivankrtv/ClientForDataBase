@@ -46,34 +46,35 @@
             this.Provider = new System.Windows.Forms.TextBox();
             this.ContractID = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Search2 = new System.Windows.Forms.Button();
+            this.SearchField2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DeleteOrder = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Search = new System.Windows.Forms.Button();
             this.SearchField = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.ProductsTable = new System.Windows.Forms.DataGridView();
-            this.DeleteOrder = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.RefPruductsTable = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Product_ID = new System.Windows.Forms.TextBox();
-            this.Units = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.ProductName = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Price = new System.Windows.Forms.TextBox();
-            this.Label = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.Button();
             this.ProdIDForDel = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.Delete = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.Search2 = new System.Windows.Forms.Button();
-            this.SearchField2 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Add = new System.Windows.Forms.Button();
+            this.Price = new System.Windows.Forms.TextBox();
+            this.Label = new System.Windows.Forms.Label();
+            this.ProductName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Units = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Product_ID = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.RefPruductsTable = new System.Windows.Forms.Button();
+            this.ProductsTable = new System.Windows.Forms.DataGridView();
+            this.RefreshOrder = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
@@ -260,6 +261,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.Controls.Add(this.RefreshOrder);
             this.tabPage2.Controls.Add(this.Search2);
             this.tabPage2.Controls.Add(this.SearchField2);
             this.tabPage2.Controls.Add(this.label18);
@@ -275,6 +277,51 @@
             this.tabPage2.Size = new System.Drawing.Size(1200, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Найти";
+            // 
+            // Search2
+            // 
+            this.Search2.Location = new System.Drawing.Point(353, 46);
+            this.Search2.Name = "Search2";
+            this.Search2.Size = new System.Drawing.Size(75, 33);
+            this.Search2.TabIndex = 8;
+            this.Search2.Text = "Найти";
+            this.Search2.UseVisualStyleBackColor = true;
+            this.Search2.Click += new System.EventHandler(this.Search2_Click);
+            // 
+            // SearchField2
+            // 
+            this.SearchField2.Location = new System.Drawing.Point(161, 49);
+            this.SearchField2.Name = "SearchField2";
+            this.SearchField2.Size = new System.Drawing.Size(174, 26);
+            this.SearchField2.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(38, 52);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(117, 20);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Номер товара";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(720, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(323, 20);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Удалить заказ с этим номером договора";
+            // 
+            // DeleteOrder
+            // 
+            this.DeleteOrder.Location = new System.Drawing.Point(1049, 10);
+            this.DeleteOrder.Name = "DeleteOrder";
+            this.DeleteOrder.Size = new System.Drawing.Size(103, 29);
+            this.DeleteOrder.TabIndex = 4;
+            this.DeleteOrder.Text = "Удалить";
+            this.DeleteOrder.UseVisualStyleBackColor = true;
+            this.DeleteOrder.Click += new System.EventHandler(this.DeleteOrder_Click);
             // 
             // dataGridView1
             // 
@@ -339,136 +386,33 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Товары";
             // 
-            // ProductsTable
+            // label17
             // 
-            this.ProductsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProductsTable.Location = new System.Drawing.Point(8, 3);
-            this.ProductsTable.Name = "ProductsTable";
-            this.ProductsTable.RowHeadersWidth = 62;
-            this.ProductsTable.RowTemplate.Height = 28;
-            this.ProductsTable.Size = new System.Drawing.Size(1184, 378);
-            this.ProductsTable.TabIndex = 0;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(514, 493);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(163, 20);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "разделять запятой)";
             // 
-            // DeleteOrder
+            // label16
             // 
-            this.DeleteOrder.Location = new System.Drawing.Point(1049, 10);
-            this.DeleteOrder.Name = "DeleteOrder";
-            this.DeleteOrder.Size = new System.Drawing.Size(103, 29);
-            this.DeleteOrder.TabIndex = 4;
-            this.DeleteOrder.Text = "Удалить";
-            this.DeleteOrder.UseVisualStyleBackColor = true;
-            this.DeleteOrder.Click += new System.EventHandler(this.DeleteOrder_Click);
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(492, 473);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(220, 20);
+            this.label16.TabIndex = 16;
+            this.label16.Text = "(целая и десятичная часть ";
             // 
-            // label9
+            // Delete
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(720, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(323, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Удалить заказ с этим номером договора";
-            // 
-            // RefPruductsTable
-            // 
-            this.RefPruductsTable.Location = new System.Drawing.Point(1079, 387);
-            this.RefPruductsTable.Name = "RefPruductsTable";
-            this.RefPruductsTable.Size = new System.Drawing.Size(113, 35);
-            this.RefPruductsTable.TabIndex = 1;
-            this.RefPruductsTable.Text = "Обновить";
-            this.RefPruductsTable.UseVisualStyleBackColor = true;
-            this.RefPruductsTable.Click += new System.EventHandler(this.RefPruductsTable_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(235, 387);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(137, 20);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Добавить товар:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 420);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(117, 20);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Номер товара";
-            // 
-            // Product_ID
-            // 
-            this.Product_ID.Location = new System.Drawing.Point(8, 444);
-            this.Product_ID.Name = "Product_ID";
-            this.Product_ID.Size = new System.Drawing.Size(129, 26);
-            this.Product_ID.TabIndex = 4;
-            // 
-            // Units
-            // 
-            this.Units.Location = new System.Drawing.Point(163, 444);
-            this.Units.Name = "Units";
-            this.Units.Size = new System.Drawing.Size(129, 26);
-            this.Units.TabIndex = 6;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(159, 420);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(136, 20);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "Единицы товара";
-            // 
-            // ProductName
-            // 
-            this.ProductName.Location = new System.Drawing.Point(317, 444);
-            this.ProductName.Name = "ProductName";
-            this.ProductName.Size = new System.Drawing.Size(176, 26);
-            this.ProductName.TabIndex = 8;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(313, 420);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(180, 20);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Наименование товара";
-            // 
-            // Price
-            // 
-            this.Price.Location = new System.Drawing.Point(518, 444);
-            this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(129, 26);
-            this.Price.TabIndex = 10;
-            // 
-            // Label
-            // 
-            this.Label.AutoSize = true;
-            this.Label.Location = new System.Drawing.Point(514, 420);
-            this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(136, 20);
-            this.Label.TabIndex = 9;
-            this.Label.Text = "Цена за единицу";
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(694, 440);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(111, 34);
-            this.Add.TabIndex = 11;
-            this.Add.Text = "Добавить";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(235, 495);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 20);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Удалить товар:";
+            this.Delete.Location = new System.Drawing.Point(177, 536);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(115, 34);
+            this.Delete.TabIndex = 15;
+            this.Delete.Text = "Удалить";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // ProdIDForDel
             // 
@@ -486,59 +430,127 @@
             this.label15.TabIndex = 13;
             this.label15.Text = "Номер товара";
             // 
-            // Delete
+            // label14
             // 
-            this.Delete.Location = new System.Drawing.Point(177, 536);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(115, 34);
-            this.Delete.TabIndex = 15;
-            this.Delete.Text = "Удалить";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(235, 495);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(129, 20);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Удалить товар:";
             // 
-            // label16
+            // Add
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(492, 473);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(220, 20);
-            this.label16.TabIndex = 16;
-            this.label16.Text = "(целая и десятичная часть ";
+            this.Add.Location = new System.Drawing.Point(694, 440);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(111, 34);
+            this.Add.TabIndex = 11;
+            this.Add.Text = "Добавить";
+            this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
-            // label17
+            // Price
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(514, 493);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(163, 20);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "разделять запятой)";
+            this.Price.Location = new System.Drawing.Point(518, 444);
+            this.Price.Name = "Price";
+            this.Price.Size = new System.Drawing.Size(129, 26);
+            this.Price.TabIndex = 10;
             // 
-            // Search2
+            // Label
             // 
-            this.Search2.Location = new System.Drawing.Point(353, 46);
-            this.Search2.Name = "Search2";
-            this.Search2.Size = new System.Drawing.Size(75, 33);
-            this.Search2.TabIndex = 8;
-            this.Search2.Text = "Найти";
-            this.Search2.UseVisualStyleBackColor = true;
-            this.Search2.Click += new System.EventHandler(this.Search2_Click);
+            this.Label.AutoSize = true;
+            this.Label.Location = new System.Drawing.Point(514, 420);
+            this.Label.Name = "Label";
+            this.Label.Size = new System.Drawing.Size(136, 20);
+            this.Label.TabIndex = 9;
+            this.Label.Text = "Цена за единицу";
             // 
-            // SearchField2
+            // ProductName
             // 
-            this.SearchField2.Location = new System.Drawing.Point(161, 49);
-            this.SearchField2.Name = "SearchField2";
-            this.SearchField2.Size = new System.Drawing.Size(174, 26);
-            this.SearchField2.TabIndex = 7;
+            this.ProductName.Location = new System.Drawing.Point(317, 444);
+            this.ProductName.Name = "ProductName";
+            this.ProductName.Size = new System.Drawing.Size(176, 26);
+            this.ProductName.TabIndex = 8;
             // 
-            // label18
+            // label13
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(38, 52);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(117, 20);
-            this.label18.TabIndex = 6;
-            this.label18.Text = "Номер товара";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(313, 420);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(180, 20);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Наименование товара";
+            // 
+            // Units
+            // 
+            this.Units.Location = new System.Drawing.Point(163, 444);
+            this.Units.Name = "Units";
+            this.Units.Size = new System.Drawing.Size(129, 26);
+            this.Units.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(159, 420);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "Единицы товара";
+            // 
+            // Product_ID
+            // 
+            this.Product_ID.Location = new System.Drawing.Point(8, 444);
+            this.Product_ID.Name = "Product_ID";
+            this.Product_ID.Size = new System.Drawing.Size(129, 26);
+            this.Product_ID.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 420);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(117, 20);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Номер товара";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(235, 387);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(137, 20);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Добавить товар:";
+            // 
+            // RefPruductsTable
+            // 
+            this.RefPruductsTable.Location = new System.Drawing.Point(1079, 387);
+            this.RefPruductsTable.Name = "RefPruductsTable";
+            this.RefPruductsTable.Size = new System.Drawing.Size(113, 35);
+            this.RefPruductsTable.TabIndex = 1;
+            this.RefPruductsTable.Text = "Обновить";
+            this.RefPruductsTable.UseVisualStyleBackColor = true;
+            this.RefPruductsTable.Click += new System.EventHandler(this.RefPruductsTable_Click);
+            // 
+            // ProductsTable
+            // 
+            this.ProductsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ProductsTable.Location = new System.Drawing.Point(8, 3);
+            this.ProductsTable.Name = "ProductsTable";
+            this.ProductsTable.RowHeadersWidth = 62;
+            this.ProductsTable.RowTemplate.Height = 28;
+            this.ProductsTable.Size = new System.Drawing.Size(1184, 378);
+            this.ProductsTable.TabIndex = 0;
+            // 
+            // RefreshOrder
+            // 
+            this.RefreshOrder.Location = new System.Drawing.Point(521, 37);
+            this.RefreshOrder.Name = "RefreshOrder";
+            this.RefreshOrder.Size = new System.Drawing.Size(111, 40);
+            this.RefreshOrder.TabIndex = 9;
+            this.RefreshOrder.Text = "Обновить";
+            this.RefreshOrder.UseVisualStyleBackColor = true;
+            this.RefreshOrder.Click += new System.EventHandler(this.RefreshOrder_Click);
             // 
             // ClientDB
             // 
@@ -612,6 +624,7 @@
         private System.Windows.Forms.Button Search2;
         private System.Windows.Forms.TextBox SearchField2;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button RefreshOrder;
     }
 }
 

@@ -88,15 +88,21 @@ namespace AppDB
 
         private void DeleteOrder_Click(object sender, EventArgs e)  //удаление заказа по номеру договора
         {
-            SqlCommand delSupply = new SqlCommand($"DELETE FROM Supply WHERE " +
-                $"Contract_ID = {Convert.ToInt32(SearchField.Text)}", sqlconnection);
-            SqlCommand delOrder = new SqlCommand($"DELETE FROM Orders WHERE " +
-                $"Contract_ID = {Convert.ToInt32(SearchField.Text)}", sqlconnection);
+            DialogResult res = MessageBox.Show("Вы действительно хотите удалить данные?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                SqlCommand delSupply = new SqlCommand($"DELETE FROM Supply WHERE " +
+                    $"Contract_ID = {Convert.ToInt32(SearchField.Text)}", sqlconnection);
+                SqlCommand delOrder = new SqlCommand($"DELETE FROM Orders WHERE " +
+                    $"Contract_ID = {Convert.ToInt32(SearchField.Text)}", sqlconnection);
 
-            int check = delSupply.ExecuteNonQuery();
-            check += delOrder.ExecuteNonQuery();
-            if (check == 2) MessageBox.Show("Удалено");
-            else MessageBox.Show("Ошибка при удалении");
+                int check = delSupply.ExecuteNonQuery();
+                check += delOrder.ExecuteNonQuery();
+                if (check == 2) MessageBox.Show("Удалено");
+                else MessageBox.Show("Ошибка при удалении");
+            }
+
+            RefreshOrder_Click(sender, e);
         }
 
         private void RefPruductsTable_Click(object sender, EventArgs e)     //обновление таблицы Products
@@ -122,19 +128,36 @@ namespace AppDB
             int check = add.ExecuteNonQuery();
             if (check == 1) MessageBox.Show("Успешно добавлено");
             else MessageBox.Show("Строка НЕ была добавлена");
+
+            RefPruductsTable_Click(sender, e);
         }
 
         private void Delete_Click(object sender, EventArgs e)   // удаление из Products по номеру договора
         {
-            SqlCommand delProduct = new SqlCommand($"DELETE FROM Products WHERE" +
-                $" Product_ID = @ProductID", sqlconnection);
+            DialogResult res = MessageBox.Show("Вы действительно хотите удалить данные?", "Удаление", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+            {
+                SqlCommand delProduct = new SqlCommand($"DELETE FROM Products WHERE" +
+                    $" Product_ID = @ProductID", sqlconnection);
 
-            delProduct.Parameters.AddWithValue("ProductID", Convert.ToInt32(ProdIDForDel.Text));
+                delProduct.Parameters.AddWithValue("ProductID", Convert.ToInt32(ProdIDForDel.Text));
 
-            int check = delProduct.ExecuteNonQuery();
-            if (check == 1) MessageBox.Show("Успешно удалено");
-            else MessageBox.Show("Произошла ошибка. Данные не были удалены");
+                int check = delProduct.ExecuteNonQuery();
+                if (check == 1) MessageBox.Show("Успешно удалено");
+                else MessageBox.Show("Произошла ошибка. Данные не были удалены");
+            }
+            RefPruductsTable_Click(sender, e);
         }
 
+        private void RefreshOrder_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter refr = new SqlDataAdapter("SELECT Orders.Num, Orders.orders_date, Orders.Contract_ID, Orders.Providerr, Orders.Storage, " +
+                "Supply.Product_ID, Supply.NumOfProducts, Supply.Cost FROM Orders, Supply " +
+                "WHERE Orders.Contract_ID = Supply.Contract_ID", sqlconnection);
+
+            DataSet data = new DataSet();
+            refr.Fill(data);
+            dataGridView1.DataSource = data.Tables[0];
+        }
     }
 }
