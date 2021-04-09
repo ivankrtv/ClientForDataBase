@@ -69,7 +69,17 @@ namespace AppDB
                 $"Supply.Product_ID, Supply.NumOfProducts, Supply.Cost FROM Orders, Supply " +
                 $"WHERE Orders.Contract_ID = {Convert.ToInt32(SearchField.Text)} AND Orders.Contract_ID = Supply.Contract_ID", sqlconnection);
 
-            //search.Parameters.AddWithValue("Contract", Convert.ToInt32(SearchField.Text));
+            DataSet data = new DataSet();
+            search.Fill(data);
+            dataGridView1.DataSource = data.Tables[0];
+        }
+
+        private void Search2_Click(object sender, EventArgs e)  // поиск по номеру товара
+        {
+            SqlDataAdapter search = new SqlDataAdapter(
+                $"SELECT Orders.Num, Orders.orders_date, Orders.Contract_ID, Orders.Providerr, Orders.Storage," +
+                $"Supply.Product_ID, Supply.NumOfProducts, Supply.Cost FROM Orders, Supply " +
+                $"WHERE Supply.Product_ID = {Convert.ToInt32(SearchField2.Text)} AND Orders.Contract_ID = Supply.Contract_ID", sqlconnection);
 
             DataSet data = new DataSet();
             search.Fill(data);
@@ -107,7 +117,7 @@ namespace AppDB
             add.Parameters.AddWithValue("ProductsID", Convert.ToInt32(Product_ID.Text));
             add.Parameters.AddWithValue("Units", Units.Text);
             add.Parameters.AddWithValue("ProductsName", ProductName.Text);
-            if(ifConvert) add.Parameters.AddWithValue("Price", floatPrice);
+            if(ifConvert) add.Parameters.AddWithValue("Price", Math.Round(floatPrice, 2));
 
             int check = add.ExecuteNonQuery();
             if (check == 1) MessageBox.Show("Успешно добавлено");
@@ -125,5 +135,6 @@ namespace AppDB
             if (check == 1) MessageBox.Show("Успешно удалено");
             else MessageBox.Show("Произошла ошибка. Данные не были удалены");
         }
+
     }
 }

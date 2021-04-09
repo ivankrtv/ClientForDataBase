@@ -51,8 +51,6 @@
             this.SearchField = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.ProductsTable = new System.Windows.Forms.DataGridView();
             this.DeleteOrder = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -73,6 +71,9 @@
             this.Delete = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.Search2 = new System.Windows.Forms.Button();
+            this.SearchField2 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.num)).BeginInit();
@@ -88,8 +89,6 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -261,6 +260,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Silver;
+            this.tabPage2.Controls.Add(this.Search2);
+            this.tabPage2.Controls.Add(this.SearchField2);
+            this.tabPage2.Controls.Add(this.label18);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.DeleteOrder);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -277,11 +279,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 46);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 86);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1184, 549);
+            this.dataGridView1.Size = new System.Drawing.Size(1184, 509);
             this.dataGridView1.TabIndex = 3;
             // 
             // Search
@@ -336,24 +338,6 @@
             this.tabPage4.Size = new System.Drawing.Size(1200, 603);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Товары";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1200, 603);
-            this.tabPage3.TabIndex = 4;
-            this.tabPage3.Text = "Заказы";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1200, 603);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "Поставки";
-            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // ProductsTable
             // 
@@ -530,6 +514,32 @@
             this.label17.TabIndex = 17;
             this.label17.Text = "разделять запятой)";
             // 
+            // Search2
+            // 
+            this.Search2.Location = new System.Drawing.Point(353, 46);
+            this.Search2.Name = "Search2";
+            this.Search2.Size = new System.Drawing.Size(75, 33);
+            this.Search2.TabIndex = 8;
+            this.Search2.Text = "Найти";
+            this.Search2.UseVisualStyleBackColor = true;
+            this.Search2.Click += new System.EventHandler(this.Search2_Click);
+            // 
+            // SearchField2
+            // 
+            this.SearchField2.Location = new System.Drawing.Point(161, 49);
+            this.SearchField2.Name = "SearchField2";
+            this.SearchField2.Size = new System.Drawing.Size(174, 26);
+            this.SearchField2.TabIndex = 7;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(38, 52);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(117, 20);
+            this.label18.TabIndex = 6;
+            this.label18.Text = "Номер товара";
+            // 
             // ClientDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -575,8 +585,6 @@
         private System.Windows.Forms.NumericUpDown numOfProducts;
         private System.Windows.Forms.NumericUpDown num;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.TextBox SearchField;
@@ -601,6 +609,9 @@
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button Search2;
+        private System.Windows.Forms.TextBox SearchField2;
+        private System.Windows.Forms.Label label18;
     }
 }
 
