@@ -1,0 +1,62 @@
+	1 запрос
+SELECT Sourcee, Summary 
+FROM ENTRYS 
+WHERE Mounth >= '2009-07-1' AND Mounth <= '2009-07-31';
+
+
+	2 запрос
+SELECT CAGES.ID, CAGES.cage_date, CAGES.Summary, ENTRYS.Summary 
+FROM CAGES, ENTRYS
+WHERE CAGES.Typee = 'R' AND CAGES.ID = ENTRYS.source_ID AND CAGES.Cage_date >= '01-07-09' AND CAGES.Cage_date <= '31-07-09';
+
+
+	3 Разработать БД:
+В БД будет 3 таблицы: Заказы, Поставки и Товары
+	
+	В таблице "Заказы" мы будем хранить: номер, дату заказа, номер договора (primary key),
+поставщика и место хранения
+
+	В таблице "Товары" мы будем хранить: номенклатурный номер товара(primary key), 
+единицы, цену за единицу
+
+	В таблице "Поставка"мы будем хранить: номер договора(foreign key от "Заказы"), 
+номенклатурный номер товара(foreign key от "Товары"), количество товаров и стоимость, 
+которую рассчитаем путем умножения колчества на цену товара
+
+
+------КОД СОЗДАНИЯ БД И ТЕСТОВОГО ЗАПОЛНЕНИЯ------
+
+CREATE TABLE Products(				/*Товары*/
+	Product_ID INT NOT NULL PRIMARY KEY,
+	Units VARCHAR(10),
+	Products_name VARCHAR(20),
+	Price FLOAT NOT NULL);
+
+INSERT INTO Products VALUES(1234, 'шт', 'Свечи', 59);
+INSERT INTO Products VALUES(9876, 'кг', 'Мандарины', 120);
+INSERT INTO Products VALUES(5578, 'м', 'Синяя ткань', 250);
+INSERT INTO Products VALUES(4573, 'л', 'Вода', 36);
+
+
+CREATE TABLE Orders(				/*Заказы*/
+	Num INT,
+	orders_date DATE NOT NULL,
+	Contract_ID INT NOT NULL PRIMARY KEY,
+	Providerr VARCHAR(40),
+	Storage VARCHAR(40));
+
+INSERT INTO Orders VALUES(1, '03-03-21', 111, 'СвечЗавод', 'Склад1');
+INSERT INTO Orders VALUES(2, '08-03-21', 222, 'ТканьЗавод', 'Склад2');
+INSERT INTO Orders VALUES(3, '14-04-21', 333, 'Марокко', 'Склад1');
+
+CREATE TABLE Supply(				/*Поставки*/
+	Contract_ID INT NOT NULL,
+	Product_ID INT NOT NULL,
+	NumOfProducts INT NOT NULL,
+	Cost FLOAT
+	FOREIGN KEY(Contract_ID) REFERENCES Orders(Contract_ID),
+	FOREIGN KEY(Product_ID) REFERENCES Products(Product_ID));
+
+INSERT INTO Supply VALUES(111, 1234, 150, (SELECT Price FROM Products WHERE Product_ID = 1234)*150);
+INSERT INTO Supply VALUES(222, 5578, 10, (SELECT Price FROM Products WHERE Product_ID = 5578)*10);
+INSERT INTO Supply VALUES(333, 9876, 27, (SELECT Price FROM Products WHERE Product_ID = 9876)*27);
